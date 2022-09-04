@@ -1,20 +1,19 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib/framework';
-import { preset } from 'vue-cli-plugin-vuetify-preset-shrine/preset'
 
 Vue.use(Vuetify);
 
-const options = {
+const vuetify = new Vuetify({
     theme: {
-      themes: {
-        light: { primary: 'blue' },
-      },
-    },
-  }
+        themes: {
+            light: {
+                primary: '#9652ff',
+                success: '#3cd1c2',
+                info: '#ffaa2c',
+                error: '#f83e70'
+            }
+        }
+    }
+})
 
-export default new Vuetify({
-    // The provided global preset is first merged with defaults
-  preset,
-  // User options are then merged, overwriting defaults and the global preset
-  ...options,
-});
+export default vuetify
